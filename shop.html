@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet" />
+    <link rel="icon" href="./assets/images/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/shop.css" />
+    <title>Delor - Shop</title>
+  </head>
+  <body>
+    <div class="cartModule d-none">
+      <div class="filter position-fixed w-100 h-100" onclick="closeCart()">
+        <div
+          class="col-4 position-absolute cartPro h-100 bg-white d-flex flex-column animate__animated animate__fadeInRight"
+          onclick="event.stopPropagation()">
+          <div
+            class="d-flex justify-content-between p-4 bg-info-subtle align-items-center">
+            <h4>Shopping Cart<span class="numSpan">(0)</span></h4>
+            <button onclick="closeCart()" class="closeBtn">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div>
+            <div class="productInCart overflow-y-auto"></div>
+          </div>
+          <div
+            class="position-absolute fixedBottom fixed-bottom p-5 checkOut col-12 flex-column gap-2 justify-content-start align-items-center">
+            <p class="totalDiv">0</p>
+            <button class="btn-dark btn col-6" onclick="goToCart()">
+              Check Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="whishListModule d-none">
+      <div class="filter position-fixed w-100 h-100" onclick="closeWishlist()">
+        <div
+          class="col-6 position-absolute wishProducts bg-white animate__fadeInDown animate__animated"
+          onclick="event.stopPropagation()">
+          <div class="wishTop d-flex p-2 justify-content-between">
+            <div class="wishTopLeft d-flex gap-2 align-items-center">
+              <i class="fa-regular fa-heart wishOrg"></i>
+              <p>Wishlist</p>
+            </div>
+            <div class="wishTopRight">
+              <i class="fa-solid fa-x" onclick="closeWishlist()"></i>
+            </div>
+          </div>
+          <div class="wishBottom p-2 overflow-y-auto"></div>
+        </div>
+      </div>
+    </div>
+    <div class="loginModule d-none">
+      <div
+        class="filter position-fixed w-100 h-100"
+        onclick="closeLogin()"></div>
+      <div
+        class="position-fixed model col-8 col-md-5 animate__fadeInDown animate__animated"
+        onclick="event.stopPropagation()">
+        <div class="col-12 position-relative">
+          <img src="./assets/images/login.jpg" alt="" class="w-100" />
+          <p class="position-absolute SIGN">SIGN IN</p>
+          <i
+            class="fa-solid fa-x position-absolute closeSign"
+            onclick="closeLogin()"></i>
+        </div>
+        <div class="logBottom container bg-white d-flex flex-column gap-3 p-5">
+          <input type="text" placeholder="Name*" class="loginName" />
+          <input type="password" placeholder="Password" class="loginPass" />
+          <a href="./account.html">Lost your password ?</a>
+          <p class="passMess d-none">*incorrect password</p>
+          <p class="userMess d-none">*incorrect username</p>
+          <button class="button1" onclick="loggingIn()">SIGN IN</button>
+          <button class="button2" onclick="openRegister()">
+            CREATE AN ACCOUNT
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="registerModule d-none">
+      <div
+        class="filter position-fixed w-100 h-100"
+        onclick="closeRegister()"></div>
+      <div
+        class="position-fixed model col-8 col-md-5 animate__fadeInRight animate__animated"
+        onclick="event.stopPropagation()">
+        <div class="col-12 position-relative">
+          <img src="./assets/images/login.jpg" alt="" class="w-100" />
+          <p class="position-absolute SIGN">REGISTER NOW</p>
+          <i
+            class="fa-solid fa-x position-absolute closeSign"
+            onclick="closeRegister()"></i>
+        </div>
+        <div class="logBottom container bg-white d-flex flex-column gap-3 p-5">
+          <input type="text" placeholder="Name*" class="signName" />
+          <input type="password" placeholder="Password" class="signPass" />
+          <p class="d-none invalidName">*invalid username</p>
+          <button class="button1" onclick="saveRegisterData()">Register</button>
+          <button class="button2" onclick="openLogin()">
+            ALREADY HAS AN ACCOUNT
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="logOutModel position-absolute">
+      <div class="col-3 bg-white"></div>
+    </div>
+    <!-- ---------------- nav starts ------------------- -->
+    <nav>
+      <div class="sideMenue d-none">
+        <div
+          class="filter position-fixed col-12 h-100"
+          onclick="closeMenue()"></div>
+        <div
+          class="position-fixed menueIcon d-flex flex-column gap-5 bg-white p-5 h-100 col-4 z-3"
+          onclick="event.stopPropagation()">
+          <a href="./index.html" class="text-decoration-none">Home </a>
+          <a href="./shop.html" class="text-decoration-none">Shop </a>
+          <a href="./about.html" class="text-decoration-none">About us </a>
+        </div>
+      </div>
+      <div
+        class="d-flex py-4 align-items-center justify-content-between px-4 position-fixed bg-light col-12 navItems">
+        <div class="sideMenueIcon d-block d-lg-none" onclick="openMenue()">
+          <i class="fa-solid fa-bars fs-5"></i>
+        </div>
+        <img
+          src="./assets/images/logo-black.png"
+          alt="Delor logo"
+          width="95"
+          onclick="openHome()" />
+        <div
+          class="menue d-none d-lg-flex justify-content-between col-5 flex-wrap">
+          <a href="./index.html" class="text-decoration-none">Home </a>
+          <a href="./shop.html" class="text-decoration-none" id="current"
+            >Shop
+          </a>
+          <a href="./about.html" class="text-decoration-none">About us </a>
+        </div>
+        <div class="rightNav d-flex gap-3 align-items-center">
+          <button class="login loginRegister" onclick="openLogin()">
+            LOGIN/REGISTER
+          </button>
+          <p class="d-none userInfoCon" onclick="openLogout()">
+            Hello, <span class="userInfo"></span>
+          </p>
+          <div
+            class="wishList position-relative d-none d-lg-block"
+            onclick="openWishList()">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="cart position-relative" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p class="cartNum position-absolute">0</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bottomNav position-fixed col-12 d-flex d-lg-none justify-content-around align-items-center z-3 bg-light">
+        <div class="shop d-flex flex-column align-items-center">
+          <i class="fa-solid fa-shop"></i>
+          <a class="shopA" href="./shop.html">Shop</a>
+        </div>
+        <div class="shop d-flex flex-column align-items-center">
+          <i class="fa-regular fa-user"></i>
+          <a class="shopA" href="./account.html">Account</a>
+        </div>
+        <div
+          class="wishList position-relative d-flex flex-column align-items-center"
+          onclick="openWishList()">
+          <i class="fa-regular fa-heart"></i>
+          <!-- <p class="wishNum position-absolute" id="bottomWish">0</p> -->
+          <span>Wishlist</span>
+        </div>
+      </div>
+    </nav>
+    <!-- ------------ nav Ends --------------------------------- -->
+
+    <!-- -------------------------------- catSlider starts-------------------------------  -->
+    <div class="col-12 catSlider d-flex flex-column align-items-center gap-3">
+      <div class="secTop p-5 d-flex flex-column align-items-center gap-1">
+        <h2>Shop</h2>
+        <p>Home > Shop</p>
+      </div>
+      <div class="swiper col-8">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide cereal" onclick=" renderCerral()">
+            <div class="d-flex flex-column align-items-center">
+              <div class="p-1 imgCont">
+                <a href="#productsArea">
+                  <img src="./assets/images/Cereal-1.jpg" alt="" width="130" />
+                </a>
+              </div>
+              <p>Cereal</p>
+            </div>
+          </div>
+          <div class="swiper-slide drinks" onclick="renderDrinks()">
+            <div class="d-flex flex-column align-items-center">
+              <div class="imgCont p-1">
+                <a href="#productsArea">
+                  <img src="./assets/images/Drinks-1.jpg" alt="" width="130" />
+                </a>
+              </div>
+              <p>Drinks</p>
+            </div>
+          </div>
+          <div class="swiper-slide fruits" onclick="renderFruits()">
+            <div class="d-flex flex-column align-items-center">
+              <div class="imgCont p-1">
+                <a href="#productsArea">
+                  <img src="./assets/images/Fruits-1.jpg" alt="" width="130" />
+                </a>
+              </div>
+              <p>Fruits</p>
+            </div>
+          </div>
+          <div class="swiper-slide past" onclick="renderPastries()">
+            <div class="d-flex flex-column align-items-center">
+              <div class="imgCont p-1">
+                <a href="#productsArea">
+                  <img
+                    src="./assets/images/Pastries-1.jpg"
+                    alt=""
+                    width="130" />
+                </a>
+              </div>
+              <p>Pastries</p>
+            </div>
+          </div>
+          <div class="swiper-slide vege" onclick="renderVeges()">
+            <div class="d-flex flex-column align-items-center">
+              <div class="imgCont p-1">
+                <a href="#productsArea">
+                  <img
+                    src="./assets/images/Vegetable-1.jpg"
+                    alt=""
+                    width="130" />
+                </a>
+              </div>
+              <p>Vegetable</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev sPrev">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="swiper-button-next sNext">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------- catSlider ends-------------------------------  -->
+    <!-- ---------------------------- products ---------------------------------------  -->
+    <div
+      class="d-flex flex-column gap-3 justify-content-center align-items-center">
+      <a href="#productsArea" class="text-decoration-none AllProducts col-3">
+        <button
+          class="btn btn-outline-dark col-12 mt-5 buttonProducts"
+          onclick="renderProducts()">
+          All Products
+        </button>
+      </a>
+      <div
+        class="products d-flex justify-content-center align-items-center flex-wrap container col-12 gap-5"
+        id="productsArea"></div>
+    </div>
+    <div class="toTop position-fixed">
+      <div class="toTopCon d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-arrow-up"></i>
+      </div>
+    </div>
+    <!-- ---------------------------- products ---------------------------------------  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/shop.js"></script>
+    <script src="./assets/js/ToTop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,738 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade {
+  animation: fadeInDown 1s ease forwards;
+}
+.shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+/* 
+#cartModal {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.56);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.content {
+  height: 90vh;
+  width: 350px;
+  background-color: white;
+  position: absolute;
+  top: 73px;
+  right: 0;
+} */
+/* -------------------- nav starts ------------------------------------- */
+nav {
+  top: 0;
+}
+.navItems {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+}
+.menueIcon {
+  left: 0;
+  z-index: 999;
+}
+.sideMenue {
+  background-color: rgba(0, 0, 0, 0.266);
+}
+.menue a {
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+}
+.sideMenueIcon {
+  cursor: pointer;
+}
+.search {
+  border-radius: 4rem;
+  box-shadow: 1px 5px #e2dfdf5e;
+}
+.search input ::-ms-input-placeholder {
+  color: #cccccc;
+}
+.search input {
+  border: 0;
+  background-color: transparent;
+}
+.search p {
+  border-right: solid #cccccc 1px;
+}
+.wishList p,
+.cart p {
+  right: -10px;
+  top: -10px;
+  background-color: #f26b0e;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 0 6px;
+}
+.wishList i,
+.cart i {
+  font-size: 23px;
+  transition: 500ms;
+}
+.login {
+  border: 0;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 500ms;
+}
+.login:hover {
+  color: #f26b0e;
+}
+.cat {
+  font-size: 14px;
+}
+.menue a:hover,
+.cat:hover {
+  color: #f26b0e;
+}
+.fa-magnifying-glass {
+  padding: 8px;
+  border: green dashed 1px;
+  border-radius: 50%;
+  transition: 500ms;
+}
+.fa-magnifying-glass:hover {
+  background-color: #f26b0e;
+  border: 0;
+}
+.wishList i:hover,
+.cart i:hover {
+  color: #f26b0e;
+  margin-bottom: 10px;
+}
+.bottomNav {
+  bottom: 0;
+}
+.bottomSearch {
+  border: none;
+  padding: 0;
+}
+#bottomWish {
+  right: 7px;
+}
+/* -------------------- nav ends ------------------------------------- */
+/* ------------------------- slider starts -------------------------------- */
+.slider-img {
+  height: 88vh;
+  object-fit: cover;
+}
+.slider {
+  padding-top: 6%;
+}
+.text {
+  top: 51%;
+  width: 25%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  text-align: center;
+}
+.slideH {
+  font-family: "Lora";
+  font-weight: bold;
+  color: black;
+  width: 90%;
+}
+.slideP {
+  font-size: 14px;
+  width: 90%;
+  text-align: center;
+}
+.circleBtn {
+  background-color: #f26b0e;
+  border-radius: 50%;
+  width: fit-content;
+  transition: 500ms;
+}
+.textBtn {
+  border: 0;
+  background-color: white;
+  border-radius: 50%;
+}
+.circleBtn a {
+  color: white;
+  font-size: 12px;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  color: black;
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: black;
+}
+.circleBtn:hover {
+  background-color: rgba(0, 0, 0, 255);
+}
+/* ------------------------- slider ends -------------------------------- */
+/* --------------------- services starts -------------------------------------- */
+.icon {
+  left: 40%;
+}
+.service p {
+  color: black;
+  font-family: "Lora";
+  font-weight: bold;
+}
+/* --------------------- services ends -------------------------------------- */
+/* ---------------- Organic Food at Its Best ------------------------------  */
+.organicLeftMain {
+  top: 5%;
+  left: 7%;
+}
+.organicRightMain {
+  top: 20%;
+  left: 7%;
+}
+.organicLeft h3 {
+  font-size: 45px;
+  color: black;
+  font-family: "Lora";
+  font-weight: bold;
+}
+.organicLeft button,
+.vBtn {
+  background-color: #f26b0e;
+  border: none;
+  color: white;
+  border-radius: 2rem;
+  transition: 500ms;
+}
+.organicLeft button:hover,
+.vBtn:hover {
+  background-color: rgba(0, 0, 0, 255);
+}
+.right h3 {
+  font-size: 30px;
+  font-family: "Lora";
+  font-weight: bold;
+}
+.topRight h3 {
+  color: white;
+}
+.topRight p {
+  color: white;
+}
+.bottomRight h3 {
+  color: black;
+}
+.bottomRight p {
+  color: black;
+}
+.topRight {
+  border-radius: 0.5rem;
+}
+.bottomRight {
+  border-radius: 0.5rem;
+}
+.zoom {
+  transition: 500ms;
+}
+.zoom:hover {
+  transform: scale(1.1);
+}
+/* ---------------- Organic Food at Its Best ------------------------------  */
+/* ----------------- vegan section starts --------------------- */
+.vegan h2 {
+  font-family: "Lora";
+  color: black;
+  font-size: 45px;
+}
+.vegan p {
+  color: black;
+}
+/* ----------------- vegan section enda --------------------- */
+/* --------------------- newArrivals starts---------------------------  */
+.newArrivals {
+  background-color: #f5f5f5;
+}
+.newArrivals h2 {
+  color: black;
+  font-family: "Lora";
+}
+.btns button {
+  color: black;
+  border: 0;
+  background-color: transparent;
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+}
+.btns .active,
+.btns button:hover {
+  border: dashed 2px green;
+  background-color: white;
+}
+.sec {
+  opacity: 0;
+  height: 300px;
+  object-fit: cover;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.main {
+  width: 24%;
+}
+.main:hover .sec {
+  opacity: 1;
+}
+.firstImg {
+  height: 300px;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  transition: opacity 400ms ease-in-out;
+}
+
+.main:hover .firstImg {
+  opacity: 0;
+}
+.sNext:after {
+  content: "l";
+}
+.sNext,
+.sPrev {
+  color: black;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 50%;
+}
+.sPrev:after {
+  content: "p";
+}
+.BTNCart {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.08);
+  color: black;
+  font-size: 13px;
+  background-color: white;
+  font-weight: 500;
+}
+.BTNCart:hover,
+.heart:hover,
+.view:hover {
+  background-color: #f26b0e;
+  color: white;
+}
+.heart,
+.view {
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+.proName {
+  font-size: 18px;
+  font-family: "Lora";
+  font-weight: 700;
+}
+.proName:hover {
+  color: #f26b0e;
+}
+.proPrice {
+  color: #6d9c19;
+  font-weight: 700;
+}
+.proPrice span {
+  text-decoration: line-through;
+  color: #949494;
+  font-size: 14px;
+}
+.disc {
+  background-color: #c1980f;
+  font-size: 12px;
+  color: white;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+
+/* --------------------- newArrivals ends---------------------------  */
+.videoPlay {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border-radius: 50%;
+  background-color: white;
+  border: 0;
+  color: black;
+  padding: 2rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+.videoPlay:hover {
+  background-color: #f26b0e;
+  color: white;
+}
+.videoModel {
+  top: 0;
+  height: 100vh;
+}
+.filter {
+  background-color: rgba(0, 0, 0, 0.473);
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+.filter iframe {
+  height: 60%;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.menueIcon a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+.shopA {
+  text-decoration: none;
+  color: black;
+}
+/* -------------------- best_seller -----------------------------------  */
+/* .sale {
+  font-size: 22px;
+  font-family: "Lora";
+  color: black;
+  top: 16%;
+  left: 20%;
+  font-weight: bolder;
+}
+.sale span {
+  color: #f26b0e;
+  font-size: 50px;
+}
+.best_seller {
+  border-radius: 10px;
+}
+.bestP {
+  font-size: 28px;
+  font-family: "Lora";
+  font-weight: bold;
+  color: black;
+}
+.bestP span {
+  color: #6d9c19;
+}
+.fBTN {
+  font-size: 14px;
+  font-weight: bold;
+  border: 0;
+  border-bottom: 2px solid #f26b0e;
+  background-color: transparent;
+}
+.proImg:hover .apper {
+  display: none;
+}
+.proImg:hover .hide {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.ProName {
+  color: black;
+  font-family: "Lora";
+  font-weight: 700;
+}
+.BTNCART {
+  color: black;
+  font-size: 13px;
+  font-weight: 700;
+}
+.product {
+  width: 27%;
+} */
+/* -------------------- best_seller -----------------------------------  */
+/* -------------------- footer --------------------------------------- */
+footer {
+  background-color: #206802;
+  margin-top: 12rem;
+  padding: 5rem 3rem 3rem 3rem;
+}
+.sub {
+  top: -10%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: #7bad2d;
+  width: 80%;
+  padding: 1rem 6rem;
+  border-radius: 6rem;
+  display: flex;
+}
+.first {
+  left: 12%;
+  top: -83%;
+  width: 33%;
+}
+.second {
+  left: 2%;
+}
+.sub h2 {
+  color: white;
+  font-weight: bold;
+  font-family: "Lora";
+  font-size: 28px;
+  margin-right: 10rem;
+}
+.sub button {
+  top: 50%;
+  transform: translatey(-50%);
+  right: 35%;
+  background-color: #f26b0e;
+  color: white;
+  border-radius: 2rem;
+}
+.sub input {
+  border-radius: 2rem;
+  border: none;
+}
+.links p,
+.info p {
+  font-weight: bold;
+  color: white;
+}
+.info span {
+  color: #f26b0e;
+}
+.links p:hover {
+  color: #f26b0e;
+  cursor: pointer;
+}
+.head {
+  font-size: 18px;
+}
+.cartModule .filter {
+  background-color: rgba(0, 0, 0, 0.66);
+  right: 0;
+  top: 0;
+  z-index: 4;
+}
+.filter {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: #00000059;
+}
+.counter {
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+.cartPro {
+  right: 0;
+  top: 0;
+  /* margin-top: 5%; */
+}
+.inc,
+.dec,
+.closeBtn {
+  border: none;
+  background-color: transparent;
+}
+.productInCart {
+  padding: 1rem 3rem 5rem 3rem;
+  height: 69vh;
+}
+.checkOut {
+  height: 20vh;
+  background-color: white;
+}
+.wishProducts {
+  top: 20%;
+  right: 25%;
+  border-radius: 0.5rem;
+  transform: translate(-50%, -50%);
+}
+.wishTopLeft p {
+  font-weight: 500;
+  font-size: 20px;
+}
+.wishTopLeft i {
+  font-size: 20px;
+}
+.mainLeft button {
+  font-weight: bold;
+  border: #e9e9e9 1px solid;
+  border-radius: 2rem;
+}
+.mainLeft button:hover {
+  color: white;
+  background-color: #f26b0e;
+  border-color: #f26b0e;
+}
+.wishTopRight i {
+  cursor: pointer;
+}
+.wishOrg {
+  color: #f26b0e;
+}
+.wishTop {
+  border-bottom: #e9e9e9 1px solid;
+}
+.wishBottom {
+  height: 50vh;
+}
+.toTop i {
+  color: white;
+  font-size: 20px;
+}
+.toTop {
+  bottom: 3%;
+  right: 3%;
+  z-index: 5555;
+}
+.toTopCon {
+  width: 44px;
+  height: 44px;
+  background-color: #f26b0e;
+  border-radius: 50%;
+}
+.SIGN {
+  left: 5%;
+  bottom: 10%;
+  color: white;
+  font-family: "Lora";
+  font-size: 20px;
+}
+.model {
+  top: 15%;
+  right: 25%;
+  transform: translate(50%, -50%);
+  z-index: 55555;
+  /* border-radius: 1rem; */
+}
+.model img {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.logBottom {
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.logBottom input,
+.logBottom button {
+  padding: 0.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 1rem;
+}
+.logBottom button {
+  color: white;
+}
+.logBottom button:hover {
+  background-color: #f26b0e;
+}
+.button1 {
+  background-color: black;
+}
+.button2 {
+  background-color: #666666;
+}
+.logBottom a {
+  color: black;
+  text-decoration: none;
+  border-bottom: black solid 1px;
+  padding-bottom: 0.1rem;
+  width: fit-content;
+}
+.logBottom a:hover {
+  color: #f26b0e;
+  border-color: #f26b0e;
+}
+.closeSign {
+  top: 5%;
+  right: 2%;
+  color: white;
+}
+.wished {
+  background-color: #f26b0e;
+  color: white;
+}
+.logBottom p {
+  color: red;
+}
+/* -------------------- footer --------------------------------------- */
+/* ------------------ Media Query starts here ----------------------- */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .product {
+    width: 45%;
+  }
+  .sale {
+    left: 9%;
+  }
+  .img4,
+  .img5,
+  .sub {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .vegan h2 {
+    font-size: 30px;
+  }
+  .product {
+    width: 90%;
+  }
+  .img3,
+  .img4,
+  .img5,
+  .sub {
+    display: none;
+  }
+  .model {
+    right: 20%;
+  }
+}
